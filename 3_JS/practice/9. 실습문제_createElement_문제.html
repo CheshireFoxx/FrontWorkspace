@@ -59,7 +59,17 @@
             2) 등록 완료후 작성한 내용을 비워줄것
         */
         function insertBoard(){
-           
+            var ul = document.createElement("ul");
+             var title = document.createTextNode("#title".value);
+             var content = document.createTextNode("#content".value);
+
+            ul.appendChild(title);
+            ul.appendChild(content);
+
+            if(ul.length < 3){
+                alert("한 글자 이상 입력해주세요.");
+                 return false;
+            }
         }
         
         /* 

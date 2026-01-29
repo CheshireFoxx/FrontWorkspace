@@ -1,3 +1,3 @@
 function test(){
-    console.log("클릭3");
+    console.log('클릭3');
 }

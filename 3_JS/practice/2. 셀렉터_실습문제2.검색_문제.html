@@ -22,7 +22,7 @@
   </style>
 </head>
 <body>
-	<h2>실습문제3</h2>
+	<h2>@실습문제3</h2>
 	<fieldset>
 		<legend>검색할 항목을 선택하세요.</legend>
 		<input type="radio" name="category" value="title" onclick="showDiv1(this);" id="title"><label for="title">제목</label>&nbsp; &nbsp; 
@@ -56,36 +56,41 @@
 			<input type="submit" value="검색">
 		</form>
 	</div>
-
-
-
-	
 	<script type="text/javascript">
-	//요구한 내용을 변수, 연산자, 제어문 등을 사용하여 실행되게 하시오.
-	//제목 체크시, titleBox 만 보여지게
-	//날짜 체크시, dateBox 만 보여지게
-	//작성자 체크시, writerBox 만 보여지게 함
-	function showDiv1(radio){
-		var radios = document.querySelectorAll("input[name=category]");
-		var currentValue = radios.value;
+		//요구한 내용을 변수, 연산자, 제어문 등을 사용하여 실행되게 하시오.
+		//제목 체크시, titleBox 만 보여지게
+		//날짜 체크시, dateBox 만 보여지게
+		//작성자 체크시, writerBox 만 보여지게 함
+		function showDiv1(radio){
+			// 현재 내가 선택한 라디오버튼의 value값 얻어오기.
+			// var radios = document.querySelectorAll("input[name=category]");
+			// var currentValue = "";
 
-		// inline 이벤트 속성에 명시된 this는 이벤트가 발생한 객체의 주소값이 저장된다.
+			// for(let i = 0; i<radios.length; i++){
+			// 	if(radios[i].checked){
+			// 		currentValue = radios[i].value;
+			// 	}
+			// }
+			// console.log(currentValue);
+			var checkedRadio = document.querySelector("input[name=category]:checked");
+			var currentValue = checkedRadio.value;
+			console.log(currentValue);
 
-		titleBox.style.display="none";
-		dateBox.style.display="none";
-		writerBox.style.display="none";
-		
-		console.log(radio.value);
-		if (currentValue==="title") {
-			titleBox.style.display="block";
-		}else if(currentValue==="date"){
-			dateBox.style.display="block";
-		}else if(currentValue === "writer"){
-			writerBox.style.display="block";
+			// inline이벤트 속성에 명시된 this는 이벤트가 발생한 객체의 주소값이 저장된다.
+			console.log(radio.value);
+
+			titleBox.style.display = "none";
+			dateBox.style.display = "none";
+			writerBox.style.display = "none";
+
+			if(currentValue === 'title'){
+				titleBox.style.display = "block";
+			}else if(currentValue === 'date'){
+				dateBox.style.display = "block";
+			}else if(currentValue === 'writer'){
+				writerBox.style.display = "block";
+			}
 		}
-	}
-
-		
   	</script>
 </body>
 </html>

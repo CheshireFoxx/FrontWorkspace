@@ -30,20 +30,17 @@
 	</style>
 
 	<script type="text/javascript">
-		
 		function oneCheckbox(ckBox) { //체크박스가 하나만 선택되도록 하는 함수 oneCheckbox() 만들기
-		var checkboxes = document.querySelectorAll("input[name=product]");
-        
-		for (let i = 0; i < checkboxes.length; i++) {
-			// 짧은 조건문
-			// &&, ||
-			(checkboxes[i]!=ckBox)&&(checkboxes[i].checked=false);
+			var checkboxes = document.querySelectorAll("input[name=product]");
+
+			//checkboxes.checked = false;
+			for(var i = 0; i<checkboxes.length; i++){
+				// 짧은 조건문
+				// && , || 
+				(checkboxes[i] != ckBox) && (checkboxes[i].checked = false);
+			}
+			//ckBox.checked = true;
 		}
-		// ckBox.checked = true;
-
-
-
-      }
 	</script>
 
 

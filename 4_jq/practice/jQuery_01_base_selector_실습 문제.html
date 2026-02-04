@@ -12,10 +12,10 @@
     <h2>Selector1</h2>
     <script>
         $(document).ready(function(){
-            $("h1").css("color","red")
-            $("#text").css("color","orange");
-            $("h1[name=text]").css("color","yellow")
-            $(".text").css("color","green")
+            $("h1").css('color','red');
+            $("#text").css('color','orange');
+            $("[name=text]").css('color','yellow');
+            $(".text").css('color','green');
         });
     
     </script>
@@ -29,15 +29,13 @@
     <h2>Selector2</h2>
     <script>
         $(document).ready(function(){
-            $("ol>li.second").css("color","orange");
-            $("ol>li.first").css("color","yellow");
-            $("ol>li").first().css("color","red");
-            $("ul>li.third").css("color","purple");
-            $("ul>li.second").css("color","blue");
-            $("ul>li").first().css("color","green");
+            $("ol:first").css('color','red');
+            $("ol>li").eq(1).css("color",'orange');
+            $("ol>li:eq(2)").css("color",'green');
 
-
-
+            $("ul>li").first().css("color","blue");
+            $("ul>li").filter(".second").css("color","darkviolet");
+            $("ul>li").last().css("color","purple");
         });
     
     </script>
@@ -57,26 +55,28 @@
     <h2>Selector3</h2>
     <script>
         function clear(){
-            $("td").removeAttr("style");           
+            $("td").removeAttr("style");
         }
         function click1(){
             clear();
-            $("tr:eq(1)>td").not("td:first").css("color","yellow");
+            $("td:contains(10)").css("color","yellow");
         }
         function click2(){
             clear();
-            $("tr:eq(2)>td").not("td:first").css("color","yellow");
+            // 3번행에 1,2번인덱스
+            $("tr:eq(2) > td")
+                .not(":first").css("color","yellow");
         }
         function click3(){
+            // 1,2번 행, 1번열
             clear();
-            $("tr:eq(1)>td:odd").css("color","yellow");
-            $("tr:eq(2)>td:odd").css("color","yellow");
-            // $("td:nth-of-type(2)":not(tr:last-of-type td)).css("color","yellow");
+            $("td:nth-of-type(2):not(tr:last-of-type td)")
+            .css('color','yellow')
         }
         function click4(){
             clear();
-            $("tr:eq(1)>td:last").css("color","yellow");
-            $("tr:eq(2)>td:last").css("color","yellow");
+            $("td").eq(2).css('color','yellow');
+            $("td").eq(5).css('color','yellow');
         }
     
     </script>
@@ -89,27 +89,12 @@
     <br><br>
 
     <table border="1">
-        <tr>
-            <th>구분</th>
-            <th>A</th>
-            <th>B</th>
-        </tr>
-        <tr>
-            <td>가</td>
-            <td>10</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>나</td>
-            <td>20</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>계</td>
-            <td>30</td>
-            <td>30</td>
-        </tr>
+        <tr><th>구분</th><th>A</th><th>B</th></tr>
+        <tr><td>가</td><td>10</td><td>10</td></tr>
+        <tr><td>나</td><td>20</td><td>20</td></tr>
+        <tr><td>계</td><td>30</td><td>30</td></tr>
     </table>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>

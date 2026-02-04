@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>기본선택자</title>
-    <script src="
-        https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js">
-    </script> 
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@4.0.0/dist/jquery.min.js"></script>
 </head>
 <body>
     <h1>기본 선택자</h1>
@@ -18,15 +16,13 @@
     <script>
         $(function(){
             // 자바스크립트 방식 요소 선택
-            document.querySelector("#id1").style.color="red";
-            document.querySelector("#id1").innerHTML="변경완료";
+            document.querySelector("#id1").style.color = "red";
+            document.querySelector("#id1").innerHTML = "변경완료"
 
-            // jQuery 방식 요소 선택
-            $("#id2").css("color", "pink");
-            $("#id2").html("변경 끝");
-
-
-        });
+            // jquery방식 요소 선택
+            $("#id2").css('color','pink');
+            $("#id2").html("변경끝");
+        })        
     </script>
 
     <h3>* 태그 선택자</h3>
@@ -34,11 +30,12 @@
     <p>Java</p>
     <p>Oracle</p>
     <p>JDBC</p>
+
     <script>
         $(function(){
             var p = document.querySelectorAll("p");
 
-            $("p").css("color","blue");
+            $("p").css("color",'blue');
         })
     </script>
 
@@ -48,21 +45,20 @@
     <h1 class="item">Class2</h1>
     <h1 class="item">Class3</h1>
 
-    
     <script>
         $(function(){
-            $(".item").css("backgroundColor", "lightgray").html("요소변경").click(function(){
-                console.log("클릭");
-            })
+            $(".item")
+                .css('backgroundColor','lightgray')
+                .html("요소변경")
+                .click(function(){
+                    console.log('클릭');
+                })
         })
     </script>
 
 
 
 
-
-
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
